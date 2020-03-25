@@ -89,7 +89,6 @@ static void treeFactory(GenericTree<int>& tree) {
 
   // Clear any nodes from the tree if it is populated
   tree.clear();
-
   // Create vector with integer values to place into the tree
   std::vector<int> tree_input {4, 8, 15, 16, 23, 42};
   // Create tree root
@@ -104,13 +103,7 @@ static void treeFactory(GenericTree<int>& tree) {
   tree_root->childrenPtrs[0]->addChild(tree_input[4]);
   // Add third level of nodes
   tree_root->childrenPtrs[0]->childrenPtrs[0]->addChild(tree_input[5]);
-
-
-
    
-
-  
-
 }
 // treeFactoryTest: This function demonstrates the execution of treeFactory
 // and displays a preview of the results in the main function.
