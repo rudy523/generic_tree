@@ -87,19 +87,31 @@
 // tree is edited in-place by reference.
 static void treeFactory(GenericTree<int>& tree) {
 
-  //      *****************************************************
-  //                           EXERCISE 1
-  //    TODO: Your work here! You should edit this function body!
-  //      *****************************************************
+  // Clear any nodes from the tree if it is populated
+  tree.clear();
 
-  // Edit the function body only. You should leave the function header alone.
-  // Build the contents of tree so that it matches the diagram above
-  // when you print it out. The main() function runs that test for you.
+  // Create vector with integer values to place into the tree
+  std::vector<int> tree_input {4, 8, 15, 16, 23, 42};
+  // Create tree root
+  tree.createRoot(tree_input[0]);
+  // Get the root pointer
+  GenericTree<int>::TreeNode* tree_root = tree.getRootPtr();
+  // Add first level of nodes
+  tree_root->addChild(tree_input[1]);
+  tree_root->addChild(tree_input[2]);
+  // Add second level of nodes
+  tree_root->childrenPtrs[0]->addChild(tree_input[3]);
+  tree_root->childrenPtrs[0]->addChild(tree_input[4]);
+  // Add third level of nodes
+  tree_root->childrenPtrs[0]->childrenPtrs[0]->addChild(tree_input[5]);
 
-  // ...
+
+
+   
+
+  
 
 }
-
 // treeFactoryTest: This function demonstrates the execution of treeFactory
 // and displays a preview of the results in the main function.
 // (You do NOT need to edit this function.)
