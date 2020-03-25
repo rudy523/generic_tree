@@ -96,11 +96,11 @@ static void treeFactory(GenericTree<int>& tree) {
   // Get the root pointer
   GenericTree<int>::TreeNode* tree_root = tree.getRootPtr();
   // Add first level of nodes
-  tree_root->addChild(tree_input[2]);
   tree_root->addChild(tree_input[1]);
+  tree_root->addChild(tree_input[2]);
   // Add second level of nodes
-  tree_root->childrenPtrs[0]->addChild(tree_input[4]);
   tree_root->childrenPtrs[0]->addChild(tree_input[3]);
+  tree_root->childrenPtrs[0]->addChild(tree_input[4]);
   // Add third level of nodes
   tree_root->childrenPtrs[0]->childrenPtrs[0]->addChild(tree_input[5]);
    
