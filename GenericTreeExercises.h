@@ -329,8 +329,21 @@ std::vector<T> traverseLevels(GenericTree<T>& tree) {
   // Remember that you can add a copy of an item to the back of a std::vector
   // with the .push_back() member function.
 
-  // ...
+  std::queue<TreeNode> rootNodes;
+  rootNodes.push(rootNodePtr);
 
+  while (!rootNodes.empty()) {
+
+    rootNodePtr = rootNodes.front();
+    rootNodes.pop();
+
+    for (auto childnode : rootNodePtr->childrenPtrs) {
+
+      if (!childnode) { continue; }
+      if (childnode->childrenPtrs) { rootNodes.push(childnode); }    
+      results.push_back(childnode->data);
+    }   
+  }
   return results;
 }
 
