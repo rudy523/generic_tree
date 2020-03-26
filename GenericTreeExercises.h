@@ -330,9 +330,9 @@ std::vector<T> traverseLevels(GenericTree<T>& tree) {
   // with the .push_back() member function.
 
   std::queue<TreeNode*> rootNodes;
-
   rootNodes.push(rootNodePtr);
-
+  results.push_back(rootNodePtr->data);
+  
   while (!rootNodes.empty()) {
 
     rootNodePtr = rootNodes.front();
